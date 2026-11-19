@@ -1,0 +1,56 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="using:Client.ViewModels"
+    xmlns:models="using:Client.Models"
+    x:Class="Client.Views.SuppliersView"
+    x:DataType="viewmodels:SuppliersViewModel">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock
+            FontSize="24"
+            Text="Leverantörer"/>
+
+        <TextBox PlaceholderText="Namn"
+                 Text="{Binding Name}" />
+
+        <TextBox PlaceholderText="Adress"
+                 Text="{Binding Address}" />
+
+        <TextBox PlaceholderText="Kontaktperson"
+                 Text="{Binding ContactPerson}" />
+
+        <TextBox PlaceholderText="Telefonnummer"
+                 Text="{Binding PhoneNumber}" />
+
+        <TextBox PlaceholderText="E-post"
+                 Text="{Binding Email}" />
+
+        <Button Content="Lägg till leverantör"
+                Command="{Binding AddSupplierCommand}" />
+
+        <ListBox ItemsSource="{Binding Suppliers}">
+    <ListBox.ItemTemplate>
+
+        <DataTemplate x:DataType="models:Supplier">
+
+            <Border BorderThickness="1"
+                    Padding="5"
+                    Margin="0,2">
+
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" />
+                    <TextBlock Text="{Binding ContactPerson}" />
+                    <TextBlock Text="{Binding Email}" />
+                </StackPanel>
+
+            </Border>
+
+        </DataTemplate>
+
+    </ListBox.ItemTemplate>
+</ListBox>
+
+    </StackPanel>
+</UserControl>
