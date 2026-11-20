@@ -1,0 +1,51 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="using:Client.ViewModels"
+    xmlns:models="using:Client.Models"
+    x:Class="Client.Views.IngredientsView"
+    x:DataType="viewmodels:IngredientsViewModel">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock
+            FontSize="24"
+            Text="Råvaror"/>
+
+        <TextBox PlaceholderText="Artikelnummer"
+                 Text="{Binding ArticleNumber}" />
+
+        <TextBox PlaceholderText="Namn"
+                 Text="{Binding Name}" />
+
+        <TextBox PlaceholderText="Pris per kg"
+                 Text="{Binding PricePerKg}" />
+
+        <TextBox PlaceholderText="Lagersaldo"
+                 Text="{Binding StockQuantityKg}" />
+
+        <ComboBox
+            ItemsSource="{Binding Suppliers}"
+            SelectedItem="{Binding SelectedSupplier}" />
+
+        <Button Content="Lägg till råvara"
+                Command="{Binding AddIngredientCommand}" />
+
+        <ListBox ItemsSource="{Binding Ingredients}">
+            <ListBox.ItemTemplate>
+
+                <DataTemplate x:DataType="models:Ingredients">
+
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding ArticleNumber}" />
+                    </StackPanel>
+
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </StackPanel>
+
+</UserControl>

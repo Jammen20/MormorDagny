@@ -12,7 +12,7 @@ namespace Client.ViewModels;
 
 public partial class SuppliersViewModel : ViewModelBase
 {
-    private readonly SupplierService _supplierService;
+    private readonly SupplierServices _supplierService;
 
     [ObservableProperty]
     private string name = "";
@@ -33,7 +33,7 @@ public partial class SuppliersViewModel : ViewModelBase
 
     public SuppliersViewModel()
     {
-        _supplierService = new SupplierService(new BakeryDbContext());
+        _supplierService = new SupplierServices(new BakeryDbContext());
 
         Task.Run(LoadSuppliers);
     }

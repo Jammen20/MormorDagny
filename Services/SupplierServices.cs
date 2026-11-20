@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Client.Services;
 
-public class SupplierService
+public class SupplierServices
 {
     private readonly BakeryDbContext _context;
 
-    public SupplierService(BakeryDbContext context)
+    public SupplierServices(BakeryDbContext context)
     {
         _context = context;
     }
