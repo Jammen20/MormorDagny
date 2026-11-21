@@ -6,6 +6,7 @@ using Client.Models;
 using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Globalization;
 
 namespace Client.ViewModels;
 
@@ -21,10 +22,10 @@ public partial class IngredientsViewModel : ViewModelBase
     private string name = "";
 
     [ObservableProperty]
-    private decimal pricePerKg;
+    private string pricePerKg = "";
 
     [ObservableProperty]
-    private double stockQuantityKg;
+    private string stockQuantityKg = "";
 
     [ObservableProperty]
     private Supplier? selectedSupplier;
@@ -37,6 +38,8 @@ public partial class IngredientsViewModel : ViewModelBase
     {
         _ingredientService = new IngredientServices(new BakeryDbContext());
         _supplierService = new SupplierServices(new BakeryDbContext());
+
+        Console.WriteLine(AddIngredientCommand is not null);
 
         Task.Run(LoadData);
     }
@@ -60,21 +63,25 @@ public partial class IngredientsViewModel : ViewModelBase
     [RelayCommand]
     private async Task AddIngredient()
     {
-        if (SelectedSupplier is null)
-            return;
-
-        var ingredient = new Ingredients
+        try
         {
-            Id = Guid.NewGuid(),
-            ArticleNumber = ArticleNumber,
-            Name = Name,
-            PricePerKg = PricePerKg,
-            StockQuantityKg = StockQuantityKg,
-            SupplierId = SelectedSupplier.Id
-        };
+            var ingredient = new Ingredients
+            {
+                Id = Guid.NewGuid(),
+                ArticleNumber = ArticleNumber,
+                Name = Name,
+                PricePerKg = decimal.Parse(PricePerKg.Replace(',', '.'), CultureInfo.InvariantCulture),
+                StockQuantityKg = double.Parse(StockQuantityKg.Replace(',', '.'), CultureInfo.InvariantCulture),
+                SupplierId = SelectedSupplier.Id
+            };
 
-        await _ingredientService.Add(ingredient);
+            await _ingredientService.Add(ingredient);
 
-        await LoadData();
+            await LoadData();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 }

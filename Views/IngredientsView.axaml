@@ -18,18 +18,25 @@
         <TextBox PlaceholderText="Namn"
                  Text="{Binding Name}" />
 
-        <TextBox PlaceholderText="Pris per kg"
+        <TextBox PlaceholderText="Pris per kg (ex. 12,50 eller 12.50)"
                  Text="{Binding PricePerKg}" />
 
-        <TextBox PlaceholderText="Lagersaldo"
+        <TextBox PlaceholderText="Tillgängligt lager (kg) (ex. 100,50 eller 100.50)"
                  Text="{Binding StockQuantityKg}" />
 
-        <ComboBox
-            ItemsSource="{Binding Suppliers}"
-            SelectedItem="{Binding SelectedSupplier}" />
+        <ComboBox ItemsSource="{Binding Suppliers}" SelectedItem="{Binding SelectedSupplier}">
 
-        <Button Content="Lägg till råvara"
-                Command="{Binding AddIngredientCommand}" />
+                    <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:Supplier">
+                    <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                    </ComboBox.ItemTemplate>
+
+        </ComboBox>
+
+        <Button
+    Content="Lägg till råvara"
+    Command="{Binding AddIngredientCommand}" />
 
         <ListBox ItemsSource="{Binding Ingredients}">
             <ListBox.ItemTemplate>

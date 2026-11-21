@@ -1,9 +1,30 @@
 <Window
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:views="using:Client.Views"
-    x:Class="Client.Views.MainWindow">
+    xmlns:viewmodels="using:Client.ViewModels"
+    x:Class="Client.Views.MainWindow"
+    x:DataType="viewmodels:MainViewModel">
 
-    <views:SuppliersView/>
+    <DockPanel>
+
+        <StackPanel
+            Orientation="Horizontal"
+            Spacing="10"
+            Margin="10"
+            DockPanel.Dock="Top">
+
+            <Button
+                Content="Leverantörer"
+                Command="{Binding ShowSuppliersCommand}" />
+
+            <Button
+                Content="Råvaror"
+                Command="{Binding ShowIngredientsCommand}" />
+
+        </StackPanel>
+
+        <ContentControl Content="{Binding CurrentViewModel}" />
+
+    </DockPanel>
 
 </Window>

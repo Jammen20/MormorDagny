@@ -5,6 +5,10 @@
     xmlns:models="using:Client.Models"
     x:Class="Client.Views.SuppliersView"
     x:DataType="viewmodels:SuppliersViewModel">
+<ScrollViewer>
+
+    <StackPanel Margin="20" Spacing="10">
+
 
     <StackPanel Margin="20" Spacing="10">
 
@@ -53,4 +57,10 @@
 </ListBox>
 
     </StackPanel>
+
+        <!-- allt innehåll -->
+
+    </StackPanel>
+
+</ScrollViewer>
 </UserControl>

@@ -1,9 +1,27 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace Client.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
-    public partial string Greeting { get; set; } = "Welcome to Avalonia!";
+    private ViewModelBase? currentViewModel;
+
+    public MainViewModel()
+    {
+        CurrentViewModel = new SuppliersViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowSuppliers()
+    {
+        CurrentViewModel = new SuppliersViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowIngredients()
+    {
+        CurrentViewModel = new IngredientsViewModel();
+    }
 }

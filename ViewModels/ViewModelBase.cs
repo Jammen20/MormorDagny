@@ -2,6 +2,6 @@
 
 namespace Client.ViewModels;
 
-public abstract class ViewModelBase : ObservableObject
+public partial class ViewModelBase : ObservableObject
 {
 }
