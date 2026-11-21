@@ -1,0 +1,66 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="using:Client.ViewModels"
+    xmlns:models="using:Client.Models"
+    x:Class="Client.Views.RecipeIngredientsView"
+    x:DataType="viewmodels:RecipeIngredientsViewModel">
+<ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock
+            FontSize="24"
+            Text="Recept"/>
+
+        <TextBlock Text="Välj Produkt" />
+          <ComboBox 
+            ItemsSource="{Binding Products}" 
+            SelectedItem="{Binding SelectedProduct}">
+          
+            <ComboBox.ItemTemplate>
+                      <DataTemplate x:DataType="models:Products">
+                        <TextBlock Text="{Binding Name}" />
+                      </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                    
+            </ComboBox>
+
+            <TextBlock Text="Välj Ingrediens" />
+          <ComboBox 
+            ItemsSource="{Binding Ingredients}" 
+            SelectedItem="{Binding SelectedIngredient}">
+
+                <ComboBox.ItemTemplate>
+                  <DataTemplate x:DataType="models:Ingredients">
+                    <TextBlock Text="{Binding Name}" />
+                  </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+          </ComboBox>
+
+            <TextBox PlaceholderText="Mängd (Kg)"
+                 Text="{Binding AmountKg}" />
+
+        <Button
+    Content="Lägg till recept"
+    Command="{Binding AddRecipeIngredientCommand}" />
+
+        <ListBox ItemsSource="{Binding RecipeIngredients}">
+            <ListBox.ItemTemplate>
+
+                <DataTemplate x:DataType="models:RecipeIngredients">
+
+                    <StackPanel>
+                        <TextBlock Text="{Binding Product.Name}" />
+                        <TextBlock Text="{Binding Ingredient.Name}" />
+                        <TextBlock Text="{Binding AmountKg, StringFormat='{}Mängd: {0} kg'}" />
+                    </StackPanel>
+
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </StackPanel>
+</ScrollViewer>
+</UserControl>

@@ -25,6 +25,10 @@
                 Content="Produkter"
                 Command="{Binding ShowProductsCommand}" />
 
+            <Button
+                Content="Recept"
+                Command="{Binding ShowRecipeIngredientsCommand}" />
+
         </StackPanel>
 
         <ContentControl Content="{Binding CurrentViewModel}" />

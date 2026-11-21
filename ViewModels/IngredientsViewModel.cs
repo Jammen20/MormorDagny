@@ -17,21 +17,16 @@ public partial class IngredientsViewModel : ViewModelBase
 
     [ObservableProperty]
     private string articleNumber = "";
-
     [ObservableProperty]
     private string name = "";
-
     [ObservableProperty]
     private string pricePerKg = "";
-
     [ObservableProperty]
     private string stockQuantityKg = "";
-
     [ObservableProperty]
     private Supplier? selectedSupplier;
 
     public ObservableCollection<Ingredients> Ingredients { get; } = [];
-
     public ObservableCollection<Supplier> Suppliers { get; } = [];
 
     public IngredientsViewModel()
