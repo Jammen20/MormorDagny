@@ -8,5 +8,5 @@ public class Purchases
     public Guid IngredientId { get; set; }
     public Ingredients Ingredient { get; set; } = null!;
     public DateTime PurchaseDate { get; set; }
-    public Decimal QuantityKg { get; set; }
+    public double QuantityKg { get; set; }
 }

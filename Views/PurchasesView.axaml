@@ -1,0 +1,74 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="using:Client.ViewModels"
+    xmlns:models="using:Client.Models"
+    x:Class="Client.Views.PurchasesView"
+    x:DataType="viewmodels:PurchasesViewModel">
+
+    <ScrollViewer>
+
+        <StackPanel Margin="20" Spacing="10">
+
+            <TextBlock
+                FontSize="24"
+                Text="Inköp" />
+
+            <TextBlock Text="Välj råvara" />
+
+            <ComboBox
+                ItemsSource="{Binding Ingredients}"
+                SelectedItem="{Binding SelectedIngredient}">
+
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="models:Ingredients">
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+            </ComboBox>
+
+            <TextBox
+                PlaceholderText="Kvantitet i kg"
+                Text="{Binding QuantityKg}" />
+
+            <Button
+                Content="Registrera inköp"
+                Command="{Binding AddPurchaseCommand}" />
+
+            <ListBox ItemsSource="{Binding Purchases}">
+
+                <ListBox.ItemTemplate>
+
+                    <DataTemplate x:DataType="models:Purchases">
+
+                        <Border
+                            BorderThickness="1"
+                            Padding="5"
+                            Margin="0,2">
+
+                            <StackPanel>
+
+                                <TextBlock Text="{Binding Ingredient.Name}" />
+
+                                <TextBlock
+                                    Text="{Binding QuantityKg}" />
+
+                                <TextBlock
+                                    Text="{Binding PurchaseDate}" />
+
+                            </StackPanel>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+
+        </StackPanel>
+
+    </ScrollViewer>
+
+</UserControl>
