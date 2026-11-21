@@ -39,9 +39,7 @@ public partial class IngredientsViewModel : ViewModelBase
         _ingredientService = new IngredientServices(new BakeryDbContext());
         _supplierService = new SupplierServices(new BakeryDbContext());
 
-        Console.WriteLine(AddIngredientCommand is not null);
-
-        Task.Run(LoadData);
+        _ = LoadData();
     }
 
     [RelayCommand]
@@ -63,25 +61,21 @@ public partial class IngredientsViewModel : ViewModelBase
     [RelayCommand]
     private async Task AddIngredient()
     {
-        try
-        {
-            var ingredient = new Ingredients
-            {
-                Id = Guid.NewGuid(),
-                ArticleNumber = ArticleNumber,
-                Name = Name,
-                PricePerKg = decimal.Parse(PricePerKg.Replace(',', '.'), CultureInfo.InvariantCulture),
-                StockQuantityKg = double.Parse(StockQuantityKg.Replace(',', '.'), CultureInfo.InvariantCulture),
-                SupplierId = SelectedSupplier.Id
-            };
+        if (SelectedSupplier is null)
+            return;
 
-            await _ingredientService.Add(ingredient);
-
-            await LoadData();
-        }
-        catch (Exception ex)
+        var ingredient = new Ingredients
         {
-            Console.WriteLine(ex);
-        }
+            Id = Guid.NewGuid(),
+            ArticleNumber = ArticleNumber,
+            Name = Name,
+            PricePerKg = decimal.Parse(PricePerKg.Replace(',', '.'), CultureInfo.InvariantCulture),
+            StockQuantityKg = double.Parse(StockQuantityKg.Replace(',', '.'), CultureInfo.InvariantCulture),
+            SupplierId = SelectedSupplier.Id
+        };
+
+        await _ingredientService.Add(ingredient);
+
+        await LoadData();
     }
 }

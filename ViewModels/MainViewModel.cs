@@ -24,4 +24,10 @@ public partial class MainViewModel : ViewModelBase
     {
         CurrentViewModel = new IngredientsViewModel();
     }
+
+    [RelayCommand]
+    private void ShowProducts()
+    {
+        CurrentViewModel = new ProductsViewModel();
+    }
 }

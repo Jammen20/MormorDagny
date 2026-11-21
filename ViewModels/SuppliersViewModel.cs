@@ -6,7 +6,6 @@ using Client.Models;
 using Client.Services;
 using System.Threading.Tasks;
 using System;
-using System.Xml.Linq;
 
 namespace Client.ViewModels;
 

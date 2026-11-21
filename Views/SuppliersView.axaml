@@ -5,10 +5,7 @@
     xmlns:models="using:Client.Models"
     x:Class="Client.Views.SuppliersView"
     x:DataType="viewmodels:SuppliersViewModel">
-<ScrollViewer>
-
-    <StackPanel Margin="20" Spacing="10">
-
+<ScrollViewer VerticalScrollBarVisibility="Auto">
 
     <StackPanel Margin="20" Spacing="10">
 
@@ -35,30 +32,26 @@
                 Command="{Binding AddSupplierCommand}" />
 
         <ListBox ItemsSource="{Binding Suppliers}">
-    <ListBox.ItemTemplate>
+            <ListBox.ItemTemplate>
 
-        <DataTemplate x:DataType="models:Supplier">
+                <DataTemplate x:DataType="models:Supplier">
 
-            <Border BorderThickness="1"
-                    Padding="5"
-                    Margin="0,2">
+                    <Border BorderThickness="1"
+                            Padding="5"
+                            Margin="0,2">
 
-                <StackPanel>
-                    <TextBlock Text="{Binding Name}" />
-                    <TextBlock Text="{Binding ContactPerson}" />
-                    <TextBlock Text="{Binding Email}" />
-                </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock Text="{Binding ContactPerson}" />
+                            <TextBlock Text="{Binding Email}" />
+                        </StackPanel>
 
-            </Border>
+                    </Border>
 
-        </DataTemplate>
+                </DataTemplate>
 
-    </ListBox.ItemTemplate>
-</ListBox>
-
-    </StackPanel>
-
-        <!-- allt innehåll -->
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </StackPanel>
 

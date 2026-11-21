@@ -5,7 +5,7 @@
     xmlns:models="using:Client.Models"
     x:Class="Client.Views.IngredientsView"
     x:DataType="viewmodels:IngredientsViewModel">
-
+<ScrollViewer VerticalScrollBarVisibility="Auto">
     <StackPanel Margin="20" Spacing="10">
 
         <TextBlock
@@ -54,5 +54,5 @@
         </ListBox>
 
     </StackPanel>
-
+</ScrollViewer>
 </UserControl>

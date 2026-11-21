@@ -1,0 +1,45 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewmodels="using:Client.ViewModels"
+    xmlns:models="using:Client.Models"
+    x:Class="Client.Views.ProductsView"
+    x:DataType="viewmodels:ProductsViewModel">
+<ScrollViewer VerticalScrollBarVisibility="Auto">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock
+            FontSize="24"
+            Text="Produkter"/>
+
+        <TextBox PlaceholderText="Produktnamn"
+                 Text="{Binding Name}" />
+
+        <Button Content="Lägg till produkt"
+                 Command="{Binding AddProductCommand}" />
+
+        <ListBox ItemsSource="{Binding Products}">
+          <ListBox.ItemTemplate>
+
+              <DataTemplate x:DataType="models:Products">
+
+                  <Border BorderThickness="1"
+                         Padding="5"
+                          Margin="0,2">
+
+                      <StackPanel>
+                          <TextBlock Text="{Binding Name}" />
+                      </StackPanel>
+
+                  </Border>
+
+              </DataTemplate>
+
+          </ListBox.ItemTemplate>
+        </ListBox>
+
+    </StackPanel>
+
+</ScrollViewer>
+</UserControl>
