@@ -55,6 +55,9 @@ public partial class PurchasesViewModel : ViewModelBase
         if (SelectedIngredient is null)
             return;
 
+        if (string.IsNullOrWhiteSpace(QuantityKg))
+            return;
+
         var quantity = double.Parse(
             QuantityKg.Replace(',', '.'),
             CultureInfo.InvariantCulture);

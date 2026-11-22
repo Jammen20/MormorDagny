@@ -56,6 +56,21 @@ public partial class IngredientsViewModel : ViewModelBase
     [RelayCommand]
     private async Task AddIngredient()
     {
+        if (string.IsNullOrWhiteSpace(ArticleNumber))
+            return;
+
+        if (string.IsNullOrWhiteSpace(Name))
+            return;
+
+        if (string.IsNullOrWhiteSpace(PricePerKg))
+            return;
+
+        if (string.IsNullOrWhiteSpace(StockQuantityKg))
+            return;
+
+        if (SelectedSupplier is null)
+            return;
+
         if (SelectedSupplier is null)
             return;
 

@@ -53,6 +53,21 @@ public partial class SuppliersViewModel : ViewModelBase
     [RelayCommand]
     private async Task AddSupplier()
     {
+        if (string.IsNullOrWhiteSpace(Name))
+            return;
+
+        if (string.IsNullOrWhiteSpace(Address))
+            return;
+
+        if (string.IsNullOrWhiteSpace(ContactPerson))
+            return;
+
+        if (string.IsNullOrWhiteSpace(PhoneNumber))
+            return;
+
+        if (string.IsNullOrWhiteSpace(Email))
+            return;
+
         var supplier = new Supplier
         {
             Id = Guid.NewGuid(),

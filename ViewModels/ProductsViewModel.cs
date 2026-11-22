@@ -41,6 +41,9 @@ public partial class ProductsViewModel : ViewModelBase
     [RelayCommand]
     private async Task AddProduct()
     {
+        if (string.IsNullOrWhiteSpace(Name))
+            return;
+
         var product = new Products
         {
             Id = Guid.NewGuid(),

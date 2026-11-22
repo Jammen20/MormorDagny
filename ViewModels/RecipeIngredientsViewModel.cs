@@ -64,13 +64,19 @@ public partial class RecipeIngredientsViewModel : ViewModelBase
     {
         if (SelectedIngredient is null)
             return;
+
         if (SelectedProduct is null)
             return;
+
+        if (string.IsNullOrWhiteSpace(AmountKg))
+            return;
+
         var recipeIngredient = new RecipeIngredients
         {
             IngredientId = SelectedIngredient.Id,
             ProductId = SelectedProduct.Id,
             AmountKg = decimal.Parse(AmountKg.Replace(',', '.'), CultureInfo.InvariantCulture)
+
         };
 
         await _recipeIngredientService.Add(recipeIngredient);

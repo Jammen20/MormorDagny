@@ -9,7 +9,7 @@ build_property.AvaloniaNameGeneratorAttachDevTools = true
 build_property.AvaloniaUseCompiledBindingsByDefault = true
 build_property.AvaloniaMainPackageVersion = 12.1.4
 build_property.AvaloniaPreviewerNetCoreToolPath = C:\Users\jamme\.nuget\packages\avalonia\12.1.4\buildTransitive\\..\tools\net8.0\designer\Avalonia.Designer.HostApp.dll
-build_property.AvaloniaResourcePaths = C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Assets\avalonia-logo.ico,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\App.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Views\IngredientsView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Views\MainWindow.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Views\ProductsView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Views\PurchasesView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Views\RecipeIngredientsView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\Views\SuppliersView.axaml
+build_property.AvaloniaResourcePaths = C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\App.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\Views\IngredientsView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\Views\MainWindow.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\Views\ProductsView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\Views\PurchasesView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\Views\RecipeIngredientsView.axaml,C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\Views\SuppliersView.axaml
 build_property.TargetFramework = net10.0
 build_property.TargetFramework = net10.0
 build_property.TargetPlatformMinVersion = 
@@ -35,29 +35,29 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\jamme\onedrive\documents\iths\MormorDagny\Client\
+build_property.ProjectDir = C:\Users\jamme\onedrive\documents\iths\MormorDagny\client\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/App.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/Views/IngredientsView.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/Views/IngredientsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/Views/MainWindow.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/Views/ProductsView.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/Views/ProductsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/Views/PurchasesView.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/Views/PurchasesView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/Views/RecipeIngredientsView.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/Views/RecipeIngredientsView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/jamme/onedrive/documents/iths/MormorDagny/Client/Views/SuppliersView.axaml]
+[C:/Users/jamme/onedrive/documents/iths/MormorDagny/client/Views/SuppliersView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

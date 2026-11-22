@@ -1,5 +1,3 @@
-using System;
-using System.Dynamic;
 using Client.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
